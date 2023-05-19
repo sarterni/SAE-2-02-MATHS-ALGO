@@ -1,8 +1,11 @@
+import java.util.List;
+
 /**
  * Graphe
  */
 public interface Graphe {
 
-    Public List<String> listeNoeuds();
+    public List<String> listeNoeuds();
+    public List<Arc> suivants(String n);
     
 }
