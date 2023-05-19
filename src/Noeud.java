@@ -18,13 +18,20 @@ public class Noeud{
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof(Noeud) && this.nom == o.getNom()){
-            return true;
+        if (o instanceof Noeud){
+            if(this.nom == ((Noeud) o).getNom()){
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
     }
 
+    public void ajouterArc(String destination, double cout){
+        adj.add(new Arc(destination, cout));
+    }
     
 
 }
