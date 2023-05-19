@@ -21,4 +21,12 @@ public class Arc {
             this.cout = 0;
         }
     }
+
+    public String getDest() {
+        return null;
+    }
+
+    public String getCout() {
+        return null;
+    }
 }
