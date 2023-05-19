@@ -15,7 +15,7 @@ public class GrapheListe implements Graphe {
                 this.ensNoeuds.get(i).ajouterArc(destination, cout);
             }
         }
-        if(!present){
+        if(!present || this.ensNom.size() == 0){
             this.ensNom.add(depart);
             List<Arc> tmp = new ArrayList<>();
             tmp.add(new Arc(destination, cout));
