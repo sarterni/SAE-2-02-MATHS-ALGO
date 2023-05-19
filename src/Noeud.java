@@ -11,5 +11,20 @@ public class Noeud{
         this.nom = n;
         this.adj = a;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof(Noeud) && this.nom == o.getNom()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     
+
 }
