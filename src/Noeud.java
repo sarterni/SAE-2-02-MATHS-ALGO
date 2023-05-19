@@ -29,6 +29,11 @@ public class Noeud{
         }
     }
 
+    /**
+     * 
+     * @param destination
+     * @param cout
+     */
     public void ajouterArc(String destination, double cout){
         adj.add(new Arc(destination, cout));
     }
