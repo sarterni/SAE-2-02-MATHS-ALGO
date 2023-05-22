@@ -23,10 +23,10 @@ public class Arc {
     }
 
     public String getDest() {
-        return null;
+        return this.dest;
     }
 
-    public String getCout() {
-        return null;
+    public double getCout() {
+        return this.cout;
     }
 }
