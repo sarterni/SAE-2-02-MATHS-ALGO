@@ -57,7 +57,7 @@ public class Noeud{
     }
 
     public List<Arc> getAdj() {
-        return null;
+        return this.adj;
     }
     
 
