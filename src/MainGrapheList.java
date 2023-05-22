@@ -27,13 +27,5 @@ public class MainGrapheList {
         System.out.println(grapheG.suivants("F"));
         System.out.println(grapheG.suivants("G"));
 
-        // System.out.println(grapheG.listeNoeuds());
-        // System.out.println(grapheG.suivants("A"));
-        // System.out.println(grapheG.suivants("B"));
-        // System.out.println(grapheG.suivants("C"));
-        // System.out.println(grapheG.suivants("D"));
-        // System.out.println(grapheG.suivants("E"));
-        // System.out.println(grapheG.suivants("F"));
-        // System.out.println(grapheG.suivants("G"));
     }
 }
