@@ -59,5 +59,14 @@ public class GrapheListe implements Graphe {
         return res;
     }
     
-    
+    public String toGraphviz(){
+        String res = "digraph G {\n";
+        for(int i = 0; i < this.ensNom.size(); i++){
+            for (int j = 0; j < this.ensNoeuds.get(i).getAdj().size();j++){
+                res += this.ensNom.get(i) + " -> " + this.ensNoeuds.get(i).getAdj().get(j).getDest() + "[label = " + this.ensNoeuds.get(i).getAdj().get(j).getCout() + "]\n";
+            }
+        }
+        res += "}";
+        return res;
+    }
 }

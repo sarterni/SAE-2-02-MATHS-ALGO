@@ -16,7 +16,7 @@ public class MainGrapheList {
         grapheG.ajouterArc("F", "A", 12);
         grapheG.ajouterArc("G", "A", 13);
         System.out.println(grapheG);
-
+        System.out.println(grapheG.toGraphviz());
         
         System.out.println(grapheG.listeNoeuds());
         System.out.println(grapheG.suivants("A"));
