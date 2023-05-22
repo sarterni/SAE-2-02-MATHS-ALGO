@@ -51,10 +51,10 @@ public class GrapheListe implements Graphe {
         String res = "";
         for(int i = 0; i < this.ensNom.size(); i++){
             res += this.ensNom.get(i) + " -> ";
-            for(int j = 0; j < this.ensNoeuds.get(i).getAdj().size();i++){
+            for(int j = 0; j < this.ensNoeuds.get(i).getAdj().size();j++){
                 res += this.ensNoeuds.get(i).getAdj().get(j).getDest() + "(" + this.ensNoeuds.get(i).getAdj().get(j).getCout() + ") ";
             }
-            res += "/n";
+            res += "\n";
         }
         return res;
     }
