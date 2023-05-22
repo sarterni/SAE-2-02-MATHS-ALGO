@@ -55,6 +55,10 @@ public class Noeud{
     public void ajouterArc(String destination, double cout){
         adj.add(new Arc(destination, cout));
     }
+
+    public List<Arc> getAdj() {
+        return this.adj;
+    }
     
 
 }
