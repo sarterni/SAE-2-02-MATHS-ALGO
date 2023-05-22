@@ -7,6 +7,13 @@ public class GrapheListe implements Graphe {
     private List<String> ensNom;
     private List<Noeud> ensNoeuds;
 
+    
+
+    public GrapheListe() {
+        this.ensNom = new ArrayList<String>();
+        this.ensNoeuds = new ArrayList<Noeud>();        
+    }
+
     public void ajouterArc(String depart, String destination, double cout){
         boolean present = false;
         for(int i = 0; i < this.ensNom.size();i++){
@@ -15,6 +22,7 @@ public class GrapheListe implements Graphe {
                 this.ensNoeuds.get(i).ajouterArc(destination, cout);
             }
         }
+        
         if(!present || this.ensNom.size() == 0){
             this.ensNom.add(depart);
             List<Arc> tmp = new ArrayList<>();
