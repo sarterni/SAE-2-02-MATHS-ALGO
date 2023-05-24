@@ -9,7 +9,7 @@ public class BellmanFord {
             if (s.equals(depart)) {
                 res.setDistance(s, 0);
             } else {
-                res.setDistance(s, Double.POSITIVE_INFINITY);
+                res.setDistance(s, Double.POSITIVE_INFINITY); // Double.MAX_VALUE
             }
             res.setParent(s, null);
         }
