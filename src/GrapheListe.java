@@ -142,4 +142,20 @@ public class GrapheListe implements Graphe {
         }
         return res;
     }
+    /**
+     * getteur permettant d'utiliser l'attribut ensNoeud dans d'autres classes
+     * @return l'attribut ensNoeud
+     */
+    public List<Noeud> getEnsNoeuds() {
+        return this.ensNoeuds;
+    }
+    /**
+     * getteur permettant d'utiliser l'attribut ensNom dans d'autres classes
+     * @return l'attribut ensNom
+     */
+    public List<String> getEnsNom() {
+        return ensNom;
+    }
+    
+
 }

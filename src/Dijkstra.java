@@ -30,8 +30,17 @@ public class Dijkstra {
 //    Fin
     public Valeur resoudre(Graphe g, String depart){
         List<Noeud> Q = new ArrayList<Noeud>();
+        Noeud tmp;
         for(Noeud v :  g){
-            v.
+            for(int i = 0; i < v.getAdj().size();i++){
+                v.getAdj().get(i).setCout(Double.POSITIVE_INFINITY);
+                v.getAdj().get(i).setDest(null);
+            }
+            if(v.getNom().equals(tmp)){
+                tmp = v;
+            }
+            Q.add(v);
         }
+        tmp.getAdj().
     }
 }

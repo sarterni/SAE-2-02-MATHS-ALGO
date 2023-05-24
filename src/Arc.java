@@ -35,4 +35,18 @@ public class Arc {
     public double getCout() {
         return this.cout;
     }
+    /**
+     * setteur permettant de modifier une destination
+     * @param dest destination du noeud parent
+     */
+    public void setDest(String dest) {
+        this.dest = dest;
+    }
+    /**
+     * setteur permettant de modifier un cout
+     * @param cout cout du trajet
+     */
+    public void setCout(double cout) {
+        this.cout = cout;
+    }    
 }
