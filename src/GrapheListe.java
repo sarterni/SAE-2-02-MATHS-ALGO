@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Test;
+
 public class GrapheListe implements Graphe {
 
     
@@ -82,19 +84,38 @@ public class GrapheListe implements Graphe {
         }
     }
 
-    
-    public static void matriceAdjVersListeArc(String nomFichier){
-        GrapheMatrice grapheM = new GrapheMatrice(nomFichier);
-        GrapheListe grapheL = new GrapheListe();
-        for(int i = 0; i < grapheM.listeNoeuds().size(); i++){
-            for(int j = 0; j < grapheM.listeNoeuds().size(); j++){
-                if(grapheM.getMatrice()[i][j] != 0){
-                    grapheL.ajouterArc(grapheM.listeNoeuds().get(i), grapheM.listeNoeuds().get(j), grapheM.getMatrice()[i][j]);
-                }
-            }
-        }
-        System.out.println(grapheL);
+    @Test
+    public void test(){
+        GrapheListe grapheG = new GrapheListe();
+        grapheG.ajouterArc("A", "B", 1);
+        grapheG.ajouterArc("A", "C", 2);
+        grapheG.ajouterArc("B", "C", 3);
+        grapheG.ajouterArc("B", "D", 4);
+        grapheG.ajouterArc("C", "D", 5);
+        grapheG.ajouterArc("C", "E", 6);
+        grapheG.ajouterArc("D", "E", 7);
+        grapheG.ajouterArc("D", "F", 8);
+        grapheG.ajouterArc("E", "F", 9);
+        grapheG.ajouterArc("E", "G", 10);
+        grapheG.ajouterArc("F", "G", 11);
+        grapheG.ajouterArc("F", "A", 12);
+        grapheG.ajouterArc("G", "A", 13);
+        System.out.println(grapheG);
     }
+
+    
+    // public static void matriceAdjVersListeArc(String nomFichier){
+    //     GrapheMatrice grapheM = new GrapheMatrice(nomFichier);
+    //     GrapheListe grapheL = new GrapheListe();
+    //     for(int i = 0; i < grapheM.listeNoeuds().size(); i++){
+    //         for(int j = 0; j < grapheM.listeNoeuds().size(); j++){
+    //             if(grapheM.getMatrice()[i][j] != 0){
+    //                 grapheL.ajouterArc(grapheM.listeNoeuds().get(i), grapheM.listeNoeuds().get(j), grapheM.getMatrice()[i][j]);
+    //             }
+    //         }
+    //     }
+    //     System.out.println(grapheL);
+    // }
 
     public static void main(String[] args) {
         GrapheListe grapheG = new GrapheListe();
