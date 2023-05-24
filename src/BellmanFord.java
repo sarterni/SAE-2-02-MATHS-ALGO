@@ -22,7 +22,7 @@ public class BellmanFord {
                         if (res.getDistance(a.getDest()) > res.getDistance(s) + a.getCout()) {
                             res.setDistance(a.getDest(), res.getDistance(s) + a.getCout());
                             res.setParent(a.getDest(), s);
-                            changement++
+                            changement++;
                         }
                     }
                 }
