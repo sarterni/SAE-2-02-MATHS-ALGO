@@ -95,14 +95,16 @@ public class Valeur {
     public void setGraphe(Graphe g) {
     }
 
-    public void setDistance(String s, int i) {
-    }
+    //public void setDistance(String s, int i) {
+    //}
 
-    public void setDistance(String s, double positiveInfinity) {
-    }
+    //public void setDistance(String s, double positiveInfinity) {
+    //}
 
-    public int getDistance(String dest) {
-        return 0;
+    public double getDistance(String dest) {
+        double res;
+        res = this.valeur.get(dest);
+        return res;
     }
 
 }
