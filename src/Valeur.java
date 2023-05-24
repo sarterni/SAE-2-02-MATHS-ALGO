@@ -109,4 +109,11 @@ public class Valeur {
         res = this.valeur.get(dest);
         return res;
     }
+
+    public void setDepart(String depart) {
+        
+    }
+
+    public void setGraphe(Graphe g) {
+    }
 }
