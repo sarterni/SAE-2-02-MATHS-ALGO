@@ -15,17 +15,9 @@ public class MainGrapheList {
         grapheG.ajouterArc("F", "G", 11);
         grapheG.ajouterArc("F", "A", 12);
         grapheG.ajouterArc("G", "A", 13);
-        System.out.println(grapheG);
-        System.out.println(grapheG.toGraphviz());
-        
-        System.out.println(grapheG.listeNoeuds());
-        System.out.println(grapheG.suivants("A"));
-        System.out.println(grapheG.suivants("B"));
-        System.out.println(grapheG.suivants("C"));
-        System.out.println(grapheG.suivants("D"));
-        System.out.println(grapheG.suivants("E"));
-        System.out.println(grapheG.suivants("F"));
-        System.out.println(grapheG.suivants("G"));
+        //System.out.println(grapheG);
+        //System.out.println(grapheG.toGraphviz());
+        System.out.println(grapheG.toMatrice());
 
     }
 }

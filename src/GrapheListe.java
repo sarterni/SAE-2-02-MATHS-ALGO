@@ -3,7 +3,7 @@ import java.util.List;
 
 public class GrapheListe implements Graphe {
 
-    //attributs
+    
     private List<String> ensNom;
     private List<Noeud> ensNoeuds;
 
@@ -12,6 +12,16 @@ public class GrapheListe implements Graphe {
     public GrapheListe() {
         this.ensNom = new ArrayList<String>();
         this.ensNoeuds = new ArrayList<Noeud>();        
+    }
+
+    public GrapheListe(String nomFichier){
+        this.ensNom = new ArrayList<String>();
+        this.ensNoeuds = new ArrayList<Noeud>();
+        String[] tmp = nomFichier.split("\t");
+        for(int i = 0; i < tmp.length; i++){
+            String[] tmp2 = tmp[i].split(" ");
+            this.ajouterArc(tmp2[0], tmp2[1], Double.parseDouble(tmp2[2]));
+        }
     }
 
     public void ajouterArc(String depart, String destination, double cout){
@@ -69,4 +79,47 @@ public class GrapheListe implements Graphe {
         res += "}";
         return res;
     }
+
+    public String toMatrice(){
+        String res = " \t";
+        boolean present = false;
+        int k = 0;
+        for(int i = 0; i < this.ensNom.size();i++){
+            res += this.ensNom.get(i) + "\t";
+        }
+        res += "\n";
+        for(int i = 0; i < this.ensNoeuds.size();i++){
+            res += this.ensNom.get(i) + "\t";
+            for(int j = 0; j < this.ensNoeuds.size(); j++){
+                if(this.ensNoeuds.get(i).getNom().equals(this.ensNoeuds.get(j).getNom())){
+                    res += "0. \t";
+                } else {
+                    while (k < this.ensNoeuds.get(i).getAdj().size() || present){
+                        if(this.ensNoeuds.get(j).getNom().equals(this.ensNoeuds.get(i).getAdj().get(k))){
+                            present = true;
+                        }
+                    }
+                    if(present){
+                        res += this.ensNoeuds.get(i).getAdj().get(k).getCout() + "\t";
+                    }
+                }
+            }
+            res += "\n";
+        }
+        return res;
+    }
+
+    
+    // public static void matriceAdjVersListeArc(String nomFichier){
+    //     GrapheMatrice grapheM = new GrapheMatrice(nomFichier);
+    //     GrapheListe grapheL = new GrapheListe();
+    //     for(int i = 0; i < grapheM.listeNoeuds().size(); i++){
+    //         for(int j = 0; j < grapheM.listeNoeuds().size(); j++){
+    //             if(grapheM.getMatrice()[i][j] != 0){
+    //                 grapheL.ajouterArc(grapheM.listeNoeuds().get(i), grapheM.listeNoeuds().get(j), grapheM.getMatrice()[i][j]);
+    //             }
+    //         }
+    //     }
+    //     System.out.println(grapheL);
+    // }
 }
