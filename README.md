@@ -7,4 +7,5 @@ Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.u
         at MainGrapheList.main(MainGrapheList.java:5)
 fixé
 
+classe toMatrice n'affiche rien
 question 14 à faire
