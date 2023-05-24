@@ -16,6 +16,8 @@ public class MainGrapheList {
         grapheG.ajouterArc("F", "A", 12);
         grapheG.ajouterArc("G", "A", 13);
         System.out.println(grapheG);
+        GrapheListe grapheG2 = new GrapheListe("Graphe42.txt");
+        System.out.println(grapheG2);
 
         
         System.out.println(grapheG.listeNoeuds());
