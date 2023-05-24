@@ -6,9 +6,10 @@ import org.junit.platform.commons.util.CollectionUtils;
 public class TestGraphe {
     /**
      * test qui permet de voir si ajouterArc fonctionne correctement
+     * avec le constructeur vide
      */
     @Test
-    void testAjouterArc() {
+    void testAjouterArcVide() {
         GrapheListe gListe = new GrapheListe();
         gListe.ajouterArc("A", "B", 10);
         String dep = gListe.getEnsNom().get(0);
