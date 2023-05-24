@@ -22,4 +22,8 @@ public class Dijkstra {
 //      Fin Pour
 //    Fin Tant que
 //    Fin
+    public Valeur resoudre(Graphe g, String depart){
+        List<Noeud> Q = new ArrayList<Noeud>();
+        for()
+    }
 }
