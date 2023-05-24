@@ -79,6 +79,7 @@ public class GrapheListe implements Graphe {
     }
     /**
      * méthode permettant d'afficher les informations du graphe
+     * @return les informations du graphe
      */
     @Override
     public String toString() {
@@ -92,7 +93,11 @@ public class GrapheListe implements Graphe {
         }
         return res;
     }
-    
+    /**
+     * méthode permettant d'afficher les information du graphe de
+     * façon qu'on puisse utiliser l'afficage dans graphviz
+     * @return informations utilisable dans graphviz
+     */
     public String toGraphviz(){
         String res = "digraph G {\n";
         for(int i = 0; i < this.ensNom.size(); i++){
@@ -104,6 +109,10 @@ public class GrapheListe implements Graphe {
         return res;
     }
 
+    /**
+     * méthode permettant d'afficher les informations sous forme de matrice
+     * @return les informations du graphe sous forme de matrice
+     */
     public String toMatrice(){
         String res = " \t";
         boolean present = false;
