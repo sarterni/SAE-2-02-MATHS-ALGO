@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
 public class Dijkstra {
 //    Entrées :
 //    G un graphe orienté avec une pondération (poids) positive des arcs
@@ -24,6 +30,8 @@ public class Dijkstra {
 //    Fin
     public Valeur resoudre(Graphe g, String depart){
         List<Noeud> Q = new ArrayList<Noeud>();
-        for()
+        for(Noeud v :  g){
+            v.
+        }
     }
 }

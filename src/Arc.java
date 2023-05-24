@@ -21,11 +21,17 @@ public class Arc {
             this.cout = 0;
         }
     }
-
+    /**
+     * getteur permettent d'utiliser destination dans d'autres classes
+     * @return this.dest
+     */
     public String getDest() {
         return this.dest;
     }
-
+    /**
+     * getteur permettant d'utiliser le cout dans d'autres classes
+     * @return this.cout
+     */
     public double getCout() {
         return this.cout;
     }

@@ -1,5 +1,5 @@
 public class BellmanFord {
-
+    
     public  Valeur resoudre(Graphe g, String depart) {
         Valeur res = new Valeur();
         res.setDepart(depart);

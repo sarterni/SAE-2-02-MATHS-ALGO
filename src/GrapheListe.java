@@ -3,17 +3,25 @@ import java.util.List;
 
 public class GrapheListe implements Graphe {
 
-    
+    /**
+     * ensNom : Liste contenant le nom de tout les noeuds du graphe
+     * ensNoeud : Liste contenant tout les noeuds du graphe
+     */
     private List<String> ensNom;
     private List<Noeud> ensNoeuds;
 
     
-
+    /**
+     * constructeur permettant de construire un nouveau graphe
+     */
     public GrapheListe() {
         this.ensNom = new ArrayList<String>();
         this.ensNoeuds = new ArrayList<Noeud>();        
     }
-
+    /**
+     * constructeur permettant de construire un graphe à partir d'un fichier
+     * @param nomFichier nom du fichier
+     */
     public GrapheListe(String nomFichier){
         this.ensNom = new ArrayList<String>();
         this.ensNoeuds = new ArrayList<Noeud>();
@@ -23,7 +31,13 @@ public class GrapheListe implements Graphe {
             this.ajouterArc(tmp2[0], tmp2[1], Double.parseDouble(tmp2[2]));
         }
     }
-
+    /**
+     * méthode permettant d'ajouter un arc à un noeud
+     * crée un nouveau noeud si le départ n'est pas encore présent dans ensNom
+     * @param depart point de départ du noeud
+     * @param destination destination du noeud
+     * @param cout cout du trajet
+     */
     public void ajouterArc(String depart, String destination, double cout){
         boolean present = false;
         for(int i = 0; i < this.ensNom.size();i++){
@@ -41,11 +55,19 @@ public class GrapheListe implements Graphe {
         }
         
     }
-
+    /**
+     * méthode permettant de récupérer la liste de tous les points de départs de noeuds
+     * @return this.ensNoeud
+     */
     public List<String> listeNoeuds(){
         return this.ensNom;
     }
-
+    /**
+     * méthode permettant d'accéder à la liste des arcs auxquels 
+     * un noeud à accès
+     * @param n nom du noeud
+     * @return liste des arcs auxquels n à accès
+     */
     public List<Arc> suivants(String n){
         List<Arc> res = null;
         for(int i = 0; i < this.ensNom.size(); i++){
@@ -55,7 +77,9 @@ public class GrapheListe implements Graphe {
         }
         return res;
     }
-
+    /**
+     * méthode permettant d'afficher les informations du graphe
+     */
     @Override
     public String toString() {
         String res = "";
