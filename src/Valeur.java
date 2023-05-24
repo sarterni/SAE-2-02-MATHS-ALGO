@@ -97,4 +97,16 @@ public class Valeur {
         return res;
     }
 
+
+    public void setDistance(String s, int i) {
+    }
+
+    public void setDistance(String s, double positiveInfinity) {
+    }
+
+    public double getDistance(String dest) {
+        double res;
+        res = this.valeur.get(dest);
+        return res;
+    }
 }
