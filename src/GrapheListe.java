@@ -103,6 +103,7 @@ public class GrapheListe implements Graphe {
                         res += this.ensNoeuds.get(i).getAdj().get(k).getCout() + "\t";
                     }
                 }
+                k = 0;
             }
             res += "\n";
         }
