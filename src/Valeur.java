@@ -88,4 +88,21 @@ public class Valeur {
 
     }
 
+    public void setDepart(String depart) {
+        
+    }
+
+    public void setGraphe(Graphe g) {
+    }
+
+    public void setDistance(String s, int i) {
+    }
+
+    public void setDistance(String s, double positiveInfinity) {
+    }
+
+    public int getDistance(String dest) {
+        return 0;
+    }
+
 }
