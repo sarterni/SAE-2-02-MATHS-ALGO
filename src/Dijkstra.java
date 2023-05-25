@@ -36,10 +36,17 @@ public class Dijkstra {
         List<Noeud> Q = new ArrayList<Noeud>();
         int i = 0;
         for(Noeud v : ((GrapheListe) g).getEnsNoeuds()){
-            res.setValeur(v.getNom(),v.getAdj().get(i).getCout());
+            res.setValeur(v.getNom(),Double.POSITIVE_INFINITY);
             res.setParent(v.getNom(), null);
             Q.add(v);
             i++;
+        }
+        int A = 0;
+        i = 0;
+        while(Q.size() > 0){
+            for(Noeud v : Q){
+                if (v.g
+            }
         }
         return res;
     }
