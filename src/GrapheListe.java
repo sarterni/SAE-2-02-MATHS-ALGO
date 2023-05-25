@@ -16,18 +16,18 @@ public class GrapheListe implements Graphe {
 
     public void ajouterArc(String depart, String destination, double cout){
         boolean present = false;
+        Noeud tmp = new Noeud(depart);
         for(int i = 0; i < this.ensNom.size();i++){
-            if(this.ensNom.get(i).equals(depart)){
+            if(this.ensNoeuds.get(i).equals(tmp)){
                 present = true;
                 this.ensNoeuds.get(i).ajouterArc(destination, cout);
             }
         }
         
         if(!present || this.ensNom.size() == 0){
-            this.ensNom.add(depart);
-            List<Arc> tmp = new ArrayList<>();
-            tmp.add(new Arc(destination, cout));
-            this.ensNoeuds.add(new Noeud(depart, tmp));
+            tmp.ajouterArc(destination, cout);
+            this.ensNoeuds.add(tmp);
+            
         }
         
     }
