@@ -56,6 +56,10 @@ public class Noeud{
         adj.add(new Arc(destination, cout));
     }
 
+    /**
+     * getteur permettant d'utiliser l'atribut adj dans d'autres classes
+     * @return this.adj
+     */
     public List<Arc> getAdj() {
         return this.adj;
     }
