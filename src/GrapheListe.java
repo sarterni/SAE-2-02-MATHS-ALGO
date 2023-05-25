@@ -83,18 +83,4 @@ public class GrapheListe implements Graphe {
     }
 
     
-
-    
-    // public static void matriceAdjVersListeArc(String nomFichier){
-    //     GrapheMatrice grapheM = new GrapheMatrice(nomFichier);
-    //     GrapheListe grapheL = new GrapheListe();
-    //     for(int i = 0; i < grapheM.listeNoeuds().size(); i++){
-    //         for(int j = 0; j < grapheM.listeNoeuds().size(); j++){
-    //             if(grapheM.getMatrice()[i][j] != 0){
-    //                 grapheL.ajouterArc(grapheM.listeNoeuds().get(i), grapheM.listeNoeuds().get(j), grapheM.getMatrice()[i][j]);
-    //             }
-    //         }
-    //     }
-    //     System.out.println(grapheL);
-    // }
 }
