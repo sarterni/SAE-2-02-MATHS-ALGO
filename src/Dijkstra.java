@@ -1,5 +1,3 @@
-public class Dijkstra {
-    
     import java.util.ArrayList;
 
     import java.util.ArrayList;
@@ -7,6 +5,12 @@ public class Dijkstra {
     import java.util.List;
     
     public class Dijkstra {
+        // q: écriture de l'algorithme de Dijkstra
+        // a: 
+        //a:
+
+
+    }
     //    Entrées :
     //    G un graphe orienté avec une pondération (poids) positive des arcs
     //    A un sommet (départ) de G
@@ -30,20 +34,8 @@ public class Dijkstra {
     //      Fin Pour
     //    Fin Tant que
     //    Fin
-        public Valeur resoudre(Graphe g, String depart){
-            List<Noeud> Q = new ArrayList<Noeud>();
-            Noeud tmp;
-            for(Noeud v :  g){
-                for(int i = 0; i < v.getAdj().size();i++){
-                    v.getAdj().get(i).setCout(Double.POSITIVE_INFINITY);
-                    v.getAdj().get(i).setDest(null);
-                }
-                if(v.getNom().equals(tmp)){
-                    tmp = v;
-                }
-                Q.add(v);
-            }
-            tmp.getAdj();
-        }
-    }
+    
+    // q: convertir en Java
+    // a:
+    //a:
     
