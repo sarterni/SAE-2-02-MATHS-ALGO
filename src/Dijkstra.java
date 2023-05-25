@@ -43,7 +43,7 @@ public class Dijkstra {
                 }
                 Q.add(v);
             }
-            tmp.getAdj().
+            tmp.getAdj();
         }
     }
     
