@@ -5,12 +5,12 @@
     import java.util.List;
     
     public class Dijkstra {
-        // q: écriture de l'algorithme de Dijkstra
-        // a: 
-        //a:
-
+ 
 
     }
+
+
+    //    Algorithme de Dijkstra
     //    Entrées :
     //    G un graphe orienté avec une pondération (poids) positive des arcs
     //    A un sommet (départ) de G
