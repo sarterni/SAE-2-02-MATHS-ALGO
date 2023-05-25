@@ -14,7 +14,7 @@ public class TestGraphe {
         gListe.ajouterArc("A", "B", 10);
         String dep = gListe.listeNoeuds().get(0);
         String dest = gListe.getEnsNoeuds().get(0).getAdj().get(0).getDest();
-        double cout = gListe.getEnsNoeuds().get(0).getAdj().get(0).getCout()
+        double cout = gListe.getEnsNoeuds().get(0).getAdj().get(0).getCout();
         assertEquals("Le départ est A", "A", dep);
         assertEquals("La destination est B", "B", dest);
         assertEquals("Le cout devrait être 10", 10, cout,0.001);
