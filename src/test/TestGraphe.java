@@ -12,7 +12,7 @@ public class TestGraphe {
     void testAjouterArcVide() {
         GrapheListe gListe = new GrapheListe();
         gListe.ajouterArc("A", "B", 10);
-        String dep = gListe.getEnsNom().get(0);
+        String dep = gListe.listeNoeuds().get(0);
         String dest = gListe.getEnsNoeuds().get(0).getAdj().get(0).getDest();
         double cout = gListe.getEnsNoeuds().get(0).getAdj().get(0).getCout()
         assertEquals("Le départ est A", "A", dep);

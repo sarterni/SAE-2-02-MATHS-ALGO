@@ -82,5 +82,9 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    public List<Noeud> getEnsNoeuds() {
+        return ensNoeuds;
+    }
+
     
 }
