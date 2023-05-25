@@ -3,7 +3,7 @@ import java.util.List;
 
 public class GrapheListe implements Graphe {
 
-    //attributs
+    
     private List<String> ensNom;
     private List<Noeud> ensNoeuds;
 
@@ -59,5 +59,42 @@ public class GrapheListe implements Graphe {
         return res;
     }
     
+    public String toGraphviz(){
+        String res = "digraph G {\n";
+        for(int i = 0; i < this.ensNom.size(); i++){
+            for (int j = 0; j < this.ensNoeuds.get(i).getAdj().size();j++){
+                res += this.ensNom.get(i) + " -> " + this.ensNoeuds.get(i).getAdj().get(j).getDest() + "[label = " + this.ensNoeuds.get(i).getAdj().get(j).getCout() + "]\n";
+            }
+        }
+        res += "}";
+        return res;
+    }
+
+
+
+    public GrapheListe(String nomFichier){
+        this.ensNom = new ArrayList<String>();
+        this.ensNoeuds = new ArrayList<Noeud>();
+        String[] tmp = nomFichier.split("\t");
+        for(int i = 0; i < tmp.length; i++){
+            String[] tmp2 = tmp[i].split(" ");
+            this.ajouterArc(tmp2[0], tmp2[1], Double.parseDouble(tmp2[2]));
+        }
+    }
+
     
+
+    
+    // public static void matriceAdjVersListeArc(String nomFichier){
+    //     GrapheMatrice grapheM = new GrapheMatrice(nomFichier);
+    //     GrapheListe grapheL = new GrapheListe();
+    //     for(int i = 0; i < grapheM.listeNoeuds().size(); i++){
+    //         for(int j = 0; j < grapheM.listeNoeuds().size(); j++){
+    //             if(grapheM.getMatrice()[i][j] != 0){
+    //                 grapheL.ajouterArc(grapheM.listeNoeuds().get(i), grapheM.listeNoeuds().get(j), grapheM.getMatrice()[i][j]);
+    //             }
+    //         }
+    //     }
+    //     System.out.println(grapheL);
+    // }
 }
