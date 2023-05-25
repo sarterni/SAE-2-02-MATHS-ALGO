@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Noeud{
@@ -16,9 +17,9 @@ public class Noeud{
      * @param n nom du noeud
      * @param a liste de tous les arcs du noeud
      */
-    public Noeud(String n, List<Arc> a){
+    public Noeud(String n){
         this.nom = n;
-        this.adj = a;
+        this.adj = new ArrayList<Arc>();
     }
 
     /**

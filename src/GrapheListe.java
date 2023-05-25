@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,18 +21,18 @@ public class GrapheListe implements Graphe {
 
     public void ajouterArc(String depart, String destination, double cout){
         boolean present = false;
+        Noeud tmp = new Noeud(depart);
         for(int i = 0; i < this.ensNom.size();i++){
-            if(this.ensNom.get(i).equals(depart)){
+            if(this.ensNoeuds.get(i).equals(tmp)){
                 present = true;
                 this.ensNoeuds.get(i).ajouterArc(destination, cout);
             }
         }
         
         if(!present || this.ensNom.size() == 0){
-            this.ensNom.add(depart);
-            List<Arc> tmp = new ArrayList<>();
-            tmp.add(new Arc(destination, cout));
-            this.ensNoeuds.add(new Noeud(depart, tmp));
+            tmp.ajouterArc(destination, cout);
+            this.ensNoeuds.add(tmp);
+            
         }
         
     }
@@ -72,29 +77,23 @@ public class GrapheListe implements Graphe {
 
 
 
-    public GrapheListe(String nomFichier){
-        this.ensNom = new ArrayList<String>();
+    public GrapheListe(String nomFichier) throws IOException{
         this.ensNoeuds = new ArrayList<Noeud>();
-        String[] tmp = nomFichier.split("\t");
-        for(int i = 0; i < tmp.length; i++){
-            String[] tmp2 = tmp[i].split(" ");
-            this.ajouterArc(tmp2[0], tmp2[1], Double.parseDouble(tmp2[2]));
+        this.ensNom = new ArrayList<String>();
+        File file = new File(nomFichier);
+        BufferedReader Br = new BufferedReader(new FileReader(file));
+        String line = Br.readLine();
+        while(line != null){
+            String[] tmp = line.split("\t");
+            ajouterArc(tmp[0], tmp[1], Double.parseDouble(tmp[2]));
+            line = Br.readLine();
         }
+        Br.close();
+    }
+
+    public List<Noeud> getEnsNoeuds() {
+        return ensNoeuds;
     }
 
     
-
-    
-    // public static void matriceAdjVersListeArc(String nomFichier){
-    //     GrapheMatrice grapheM = new GrapheMatrice(nomFichier);
-    //     GrapheListe grapheL = new GrapheListe();
-    //     for(int i = 0; i < grapheM.listeNoeuds().size(); i++){
-    //         for(int j = 0; j < grapheM.listeNoeuds().size(); j++){
-    //             if(grapheM.getMatrice()[i][j] != 0){
-    //                 grapheL.ajouterArc(grapheM.listeNoeuds().get(i), grapheM.listeNoeuds().get(j), grapheM.getMatrice()[i][j]);
-    //             }
-    //         }
-    //     }
-    //     System.out.println(grapheL);
-    // }
 }

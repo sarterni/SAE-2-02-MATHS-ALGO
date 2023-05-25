@@ -1,5 +1,4 @@
-public class MainGrapheList {
-
+public class MainGraphe {
     public static void main(String[] args) {
         GrapheListe grapheG = new GrapheListe();
         grapheG.ajouterArc("A", "B", 12);
