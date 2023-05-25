@@ -84,9 +84,11 @@ public class GrapheListe implements Graphe {
         BufferedReader Br = new BufferedReader(new FileReader(file));
         String line = Br.readLine();
         while(line != null){
-            String[] tmp = nomFichier.split("\t");
+            String[] tmp = line.split("\t");
             ajouterArc(tmp[0], tmp[1], Double.parseDouble(tmp[2]));
+            line = Br.readLine();
         }
+        Br.close();
     }
 
     public List<Noeud> getEnsNoeuds() {
