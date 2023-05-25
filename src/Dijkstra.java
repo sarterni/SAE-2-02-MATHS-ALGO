@@ -31,10 +31,16 @@ public class Dijkstra {
     // a:
     //a:
     public Valeur resoudre(Graphe g, String depart){
+        
         Valeur res = new Valeur();
         List<Noeud> Q = new ArrayList<Noeud>();
-        for(Noeud v : g){
-            
+        int i = 0;
+        for(Noeud v : ((GrapheListe) g).getEnsNoeuds()){
+            res.setValeur(v.getNom(),v.getAdj().get(i).getCout());
+            res.setParent(v.getNom(), null);
+            Q.add(v);
+            i++;
         }
+        return res;
     }
 }
