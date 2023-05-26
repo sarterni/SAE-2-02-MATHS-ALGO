@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BellmanFord {
 
     public  Valeur resoudre(Graphe g, String depart) {
         Valeur res = new Valeur();
         int changement = 1;
-
+        List<Arc> tmp = new ArrayList<Arc>();
         for (String s : g.listeNoeuds()) {
             if (s.equals(depart)) {
                 res.setValeur(s, 0);
@@ -12,24 +15,19 @@ public class BellmanFord {
             }
             res.setParent(s, null);
         }
-        while(changement > 0){
+        while(changement != 0){
             changement = 0;
             for (int i = 1; i < g.listeNoeuds().size(); i++) {
                 for (String s : g.listeNoeuds()) {
-                    for (Arc a : g.suivants(s)) {
-                        if (res.getDistance(a.getDest()) > res.getDistance(s) + a.getCout()) {
-                            res.setValeur(a.getDest(), res.getDistance(s) + a.getCout());
+                    tmp = g.suivants(s);
+                    for (Arc a : tmp) {
+                        int j = 0;
+                        if (res.getDistance(a.getDest()) > res.getDistance(a.getDest())) {
+                            res.setValeur(a.getDest(), res.getDistance(a.getDest()) + a.getCout());
                             res.setParent(a.getDest(), s);
                             changement++;
                         }
                     }
-                }
-            }
-        }
-        for (String s : g.listeNoeuds()) {
-            for (Arc a : g.suivants(s)) {
-                if (res.getDistance(a.getDest()) > res.getDistance(s) + a.getCout()) {
-                    System.out.println("Erreur");
                 }
             }
         }

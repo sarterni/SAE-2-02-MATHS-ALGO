@@ -37,18 +37,5 @@ public class TestGraphe {
         }
     }
 
-    @Test
-    void testListeNoeuds() {
-
-    }
-
-    @Test
-    void testSuivants() {
-
-    }
-
-    @Test
-    void testToGraphviz() {
-
-    }
+   
 }
