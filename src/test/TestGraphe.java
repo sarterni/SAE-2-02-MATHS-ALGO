@@ -3,7 +3,6 @@ import static org.junit.Assert.assertEquals;
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.util.CollectionUtils;
 
 public class TestGraphe {
     /**
