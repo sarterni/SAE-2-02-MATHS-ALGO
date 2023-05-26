@@ -1,96 +1,28 @@
-// package test;
 
+/**
+ * TestGrapheListe
+ */
 
-// public class TestGrapheListe {
-//     @Test
+import static org.junit.Assert.assertEquals;
 
-//     public void testAjouterArc() {
+import java.io.IOException;
 
-//         GrapheListe grapheG = new GrapheListe();
-//         grapheG.ajouterArc("A", "B", 1);
-//         grapheG.ajouterArc("A", "C", 2);
-//         grapheG.ajouterArc("B", "C", 3);
-//         grapheG.ajouterArc("B", "D", 4);
-//         grapheG.ajouterArc("C", "D", 5);
-//         grapheG.ajouterArc("C", "E", 6);
-//         grapheG.ajouterArc("D", "E", 7);
-//         grapheG.ajouterArc("D", "F", 8);
-//         grapheG.ajouterArc("E", "F", 9);
-//         grapheG.ajouterArc("E", "G", 10);
-//         grapheG.ajouterArc("F", "G", 11);
-//         grapheG.ajouterArc("F", "A", 12);
-//         grapheG.ajouterArc("G", "A", 13);
-//         System.out.println(grapheG);
-//         System.out.println(grapheG.toGraphviz());
-//     }
+import org.junit.jupiter.api.Test;
 
-//     @Test
+public class TestGrapheListe {
+    @Test
+    void testGrapheListe() {
+        try {
+            GrapheListe gListe = new GrapheListe("Graphe1.txt");
+            assertEquals("Le nombre de sommets est 4", 4, gListe.getVertices().size());
+            assertEquals("Le nombre d'arcs est 4", 4, gListe.getEdges().size());
+            assertEquals("Le sommet 1 a 2 arcs", 2, gListe.getEdges(gListe.getVertex("1")).size());
+            assertEquals("Le sommet 2 a 1 arc", 1, gListe.getEdges(gListe.getVertex("2")).size());
+            assertEquals("Le sommet 3 a 1 arc", 1, gListe.getEdges(gListe.getVertex("3")).size());
+            assertEquals("Le sommet 4 a 0 arc", 0, gListe.getEdges(gListe.getVertex("4")).size());
+        } catch (IOException e) {
+            e.setStackTrace(null);
+        }
+    }
 
-//     public void testListeNoeuds() {
-
-//         GrapheListe grapheG = new GrapheListe();
-//         grapheG.ajouterArc("A", "B", 1);
-//         grapheG.ajouterArc("A", "C", 2);
-//         grapheG.ajouterArc("B", "C", 3);
-//         grapheG.ajouterArc("B", "D", 4);
-//         grapheG.ajouterArc("C", "D", 5);
-//         grapheG.ajouterArc("C", "E", 6);
-//         grapheG.ajouterArc("D", "E", 7);
-//         grapheG.ajouterArc("D", "F", 8);
-//         grapheG.ajouterArc("E", "F", 9);
-//         grapheG.ajouterArc("E", "G", 10);
-//         grapheG.ajouterArc("F", "G", 11);
-//         grapheG.ajouterArc("F", "A", 12);
-//         grapheG.ajouterArc("G", "A", 13);
-//         System.out.println(grapheG.listeNoeuds());
-//     }
-
-//     @Test
-
-//     public void testSuivants() {
-
-//         GrapheListe grapheG = new GrapheListe();
-//         grapheG.ajouterArc("A", "B", 1);
-//         grapheG.ajouterArc("A", "C", 2);
-//         grapheG.ajouterArc("B", "C", 3);
-//         grapheG.ajouterArc("B", "D", 4);
-//         grapheG.ajouterArc("C", "D", 5);
-//         grapheG.ajouterArc("C", "E", 6);
-//         grapheG.ajouterArc("D", "E", 7);
-//         grapheG.ajouterArc("D", "F", 8);
-//         grapheG.ajouterArc("E", "F", 9);
-//         grapheG.ajouterArc("E", "G", 10);
-//         grapheG.ajouterArc("F", "G", 11);
-//         grapheG.ajouterArc("F", "A", 12);
-//         grapheG.ajouterArc("G", "A", 13);
-//         System.out.println(grapheG.suivants("A"));
-//         System.out.println(grapheG.suivants("B"));
-//         System.out.println(grapheG.suivants("C"));
-//         System.out.println(grapheG.suivants("D"));
-//         System.out.println(grapheG.suivants("E"));
-//         System.out.println(grapheG.suivants("F"));
-//         System.out.println(grapheG.suivants("G"));
-//     }
-
-//     @Test
-
-//     public void tettoString()  {
-            
-//             GrapheListe grapheG = new GrapheListe();
-//             grapheG.ajouterArc("A", "B", 1);
-//             grapheG.ajouterArc("A", "C", 2);
-//             grapheG.ajouterArc("B", "C", 3);
-//             grapheG.ajouterArc("B", "D", 4);
-//             grapheG.ajouterArc("C", "D", 5);
-//             grapheG.ajouterArc("C", "E", 6);
-//             grapheG.ajouterArc("D", "E", 7);
-//             grapheG.ajouterArc("D", "F", 8);
-//             grapheG.ajouterArc("E", "F", 9);
-//             grapheG.ajouterArc("E", "G", 10);
-//             grapheG.ajouterArc("F", "G", 11);
-//             grapheG.ajouterArc("F", "A", 12);
-//             grapheG.ajouterArc("G", "A", 13);
-//             System.out.println(grapheG.toString());
-
-// }
-// }
+}
