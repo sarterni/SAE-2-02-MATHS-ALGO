@@ -9,7 +9,7 @@ public class MainGrapheList {
         grapheG.ajouterArc("D", "C", 10);
         grapheG.ajouterArc("D", "B", 23);
         grapheG.ajouterArc("E", "D",43);
-        System.out.println(grapheG);
+        System.out.println(toGraphviz(grapheG));
         //GrapheListe grapheG2 = new GrapheListe("Graphe42.txt");
         //System.out.println(grapheG2);
     }
